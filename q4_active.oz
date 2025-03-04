@@ -86,4 +86,4 @@ class Victim
     Last
  end
  
- {Browse {Josephus 40 3}}
+ {Browse {Josephus 6 3}}
