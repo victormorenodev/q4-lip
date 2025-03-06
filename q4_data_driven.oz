@@ -1,3 +1,4 @@
+declare Counter = {NewCell 0} % Inicializa o contador
 declare
 fun {Pipe Xs L H F}
     if L =< H then 
@@ -10,6 +11,7 @@ fun {Pipe Xs L H F}
  declare
  fun {Josephus2 N K}
     fun {Victim Xs I}
+      Counter := @Counter + 1  % Incrementa o contador
        case Xs of kill(X S)|Xr then
           if S == 1 then 
              Last = I nil
@@ -33,4 +35,15 @@ fun {Pipe Xs L H F}
     Last
  end
 
+ {Browse {Josephus2 10 2}}
+ {Browse 'Data driven (10 2) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
  {Browse {Josephus2 40 3}}
+ {Browse 'Data drive (40 3) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
+ {Browse {Josephus2 500 3}}
+ {Browse 'Data drive (500 3) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
+ {Browse {Josephus2 1000 5}}
+ {Browse 'Data drive (1000 5) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
