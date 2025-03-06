@@ -1,3 +1,4 @@
+declare Counter = {NewCell 0} % Inicializa o contador
 declare
 fun {Josephus3 N K} 
     A={NewArray 1 N true} % Uso um array de booleanos para indicar se o elemento está "vivo" ou "morto"
@@ -7,6 +8,7 @@ fun {Josephus3 N K}
     KillVictims
 in
     fun {KillVictims}
+        Counter := @Counter + 1  % Incrementa o contador
         if @X > N then X:=1 end % Se passei do último elemento, volto para o primeiro (circular)
         if A.@X==true then % Se o elemento estiver vivo
             if @S==1 then @X % Condição de parada
@@ -29,4 +31,15 @@ in
     {KillVictims}
 end
 
+{Browse {Josephus3 10 2}}
+{Browse 'Stateful (10 2) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
 {Browse {Josephus3 40 3}}
+{Browse 'Stateful (40 3) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
+{Browse {Josephus3 500 3}}
+{Browse 'Stateful (500 3) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
+{Browse {Josephus3 1000 5}}
+{Browse 'Stateful (1000 5) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
