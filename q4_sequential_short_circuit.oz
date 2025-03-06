@@ -1,3 +1,4 @@
+declare Counter = {NewCell 0} % Inicializa o contador
 declare
 fun {Josephus3 N K}
     A = {NewArray 1 N 0} % Usarei um array de inteiros agora
@@ -6,6 +7,7 @@ fun {Josephus3 N K}
     Step = {NewCell 1}
     Aux = {NewCell 0} % Variável auxiliar para realizar a troca de valores mais a frente
     fun {KillVictims Last} % Salvamos agora quem é o elemento anterior
+        Counter := @Counter + 1  % Incrementa o contador
         if @S==1 then % Caso de parada
             @X
         else
@@ -30,4 +32,16 @@ in
     A.N:=1
     {KillVictims 1}
 end
+
+{Browse {Josephus3 10 2}}
+{Browse 'Data driven rodou: ' # @Counter # ' vezes'}
+Counter:= 0
 {Browse {Josephus3 40 3}}
+{Browse 'Short-Circuit (40 3) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
+{Browse {Josephus3 500 3}}
+{Browse 'Short-circuit (500 3) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
+{Browse {Josephus3 1000 5}}
+{Browse 'Short-circuit (1000 5) rodou: ' # @Counter # ' vezes'}
+Counter:= 0
