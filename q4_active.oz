@@ -1,3 +1,4 @@
+declare Counter = {NewCell 0} % Inicializa o contador
 declare
 fun {NewActive Class Init}
     Obj={New Class Init}
@@ -29,6 +30,7 @@ class Victim
     end
     
     meth kill(X S)
+      Counter := @Counter + 1  % Incrementa o contador
        if @alive then
           if S==1 then 
              @last=@ident
@@ -86,4 +88,15 @@ class Victim
     Last
  end
  
- {Browse {Josephus 6 3}}
+ {Browse {Josephus 10 2}}
+ {Browse 'Active (10 2) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
+ {Browse {Josephus 40 3}}
+ {Browse 'Active (40 3) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
+ {Browse {Josephus 500 3}}
+ {Browse 'Active (500 3) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
+ {Browse {Josephus 1000 2}}
+ {Browse 'Active (1000 2) rodou: ' # @Counter # ' vezes'}
+ Counter:= 0
