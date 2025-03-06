@@ -10,7 +10,7 @@ in
         if @X > N then X:=1 end % Se passei do último elemento, volto para o primeiro (circular)
         if A.@X==true then % Se o elemento estiver vivo
             if @S==1 then @X % Condição de parada
-            elseif @Step==3 then % Se estivermos no k-elemento, coloque-o como falso, diminua o S e resete o passo.
+            elseif @Step==K then % Se estivermos no k-elemento, coloque-o como falso, diminua o S e resete o passo.
                 A.@X := false
                 X:=@X+1
                 S:=@S-1
