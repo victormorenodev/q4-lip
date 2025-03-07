@@ -34,7 +34,7 @@ in
 end
 
 {Browse {Josephus3 10 2}}
-{Browse 'Data driven rodou: ' # @Counter # ' vezes'}
+{Browse 'Short-Circuit (10 2) rodou: ' # @Counter # ' vezes'}
 Counter:= 0
 {Browse {Josephus3 40 3}}
 {Browse 'Short-Circuit (40 3) rodou: ' # @Counter # ' vezes'}
