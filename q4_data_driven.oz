@@ -14,7 +14,8 @@ fun {Pipe Xs L H F}
       Counter := @Counter + 1  % Incrementa o contador
        case Xs of kill(X S)|Xr then
           if S == 1 then 
-            % aqui
+            {Browse 'Counter' # @Counter}
+            Counter := 0
              Last = I nil
           elseif X mod K == 0 then
              kill(X+1 S-1)|Xr
@@ -37,14 +38,9 @@ fun {Pipe Xs L H F}
  end
 
  {Browse {Josephus2 10 2}}
- {Browse 'Data driven (10 2) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ {Delay 2000}
  {Browse {Josephus2 40 3}}
- {Browse 'Data drive (40 3) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ {Delay 2000}
  {Browse {Josephus2 500 3}}
- {Browse 'Data drive (500 3) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ {Delay 2000}
  {Browse {Josephus2 1000 5}}
- {Browse 'Data drive (1000 5) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
