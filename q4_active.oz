@@ -33,6 +33,7 @@ class Victim
       Counter := @Counter + 1  % Incrementa o contador
        if @alive then
           if S==1 then 
+            % aqui
              @last=@ident
           elseif X mod @step==0 then
              alive:=false
@@ -89,14 +90,14 @@ class Victim
  end
  
  {Browse {Josephus 10 2}}
- {Browse 'Active (10 2) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ %{Browse 'Active (10 2) rodou: ' # @Counter # ' vezes'}
+ %Counter:= 0
  {Browse {Josephus 40 3}}
- {Browse 'Active (40 3) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ %{Browse 'Active (40 3) rodou: ' # @Counter # ' vezes'}
+ %Counter:= 0
  {Browse {Josephus 500 3}}
- {Browse 'Active (500 3) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ %{Browse 'Active (500 3) rodou: ' # @Counter # ' vezes'}
+ %Counter:= 0
  {Browse {Josephus 1000 2}}
- {Browse 'Active (1000 2) rodou: ' # @Counter # ' vezes'}
- Counter:= 0
+ %{Browse 'Active (1000 2) rodou: ' # @Counter # ' vezes'}
+ %Counter:= 0

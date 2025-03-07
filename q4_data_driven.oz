@@ -14,6 +14,7 @@ fun {Pipe Xs L H F}
       Counter := @Counter + 1  % Incrementa o contador
        case Xs of kill(X S)|Xr then
           if S == 1 then 
+            % aqui
              Last = I nil
           elseif X mod K == 0 then
              kill(X+1 S-1)|Xr
